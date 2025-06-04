@@ -36,7 +36,7 @@ func initDependencies() appDependencies {
 
 	// Initialize services
 	classService := services.NewClassService(classRepo, bookingRepo)
-	bookingService := services.NewBookingService(bookingRepo, classRepo, classService)
+	bookingService := services.NewBookingService(bookingRepo, classRepo)
 
 	// Initialize handlers with services
 	classHandler := handlers.NewClassHandler(classService)

@@ -183,7 +183,6 @@ func TestCreateBooking(t *testing.T) {
 
 			mockClassRepo := mocks.NewMockClassRepository(ctrl)
 			mockBookingRepo := mocks.NewMockBookingRepository(ctrl)
-			mockClassService := mocks.NewMockClassService(ctrl)
 
 			// Set expectations
 			mockClassRepo.EXPECT().GetByID(tt.classID).Return(tt.class, tt.classExists)
@@ -206,7 +205,7 @@ func TestCreateBooking(t *testing.T) {
 			}
 
 			// Create service with mocks
-			service := NewBookingService(mockBookingRepo, mockClassRepo, mockClassService)
+			service := NewBookingService(mockBookingRepo, mockClassRepo)
 
 			// Call the method under test
 			booking, err := service.CreateBooking(tt.classID, tt.memberName, tt.bookingDate)

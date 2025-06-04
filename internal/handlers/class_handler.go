@@ -2,10 +2,10 @@ package handlers
 
 import (
 	"encoding/json"
-	"github.com/jilani-go/glofox/internal/constants"
 	"net/http"
 	"time"
 
+	"github.com/jilani-go/glofox/internal/constants"
 	"github.com/jilani-go/glofox/internal/services"
 	"github.com/jilani-go/glofox/internal/utils"
 )

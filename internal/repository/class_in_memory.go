@@ -7,9 +7,8 @@ import (
 
 // InMemoryClassRepo manages the in-memory class data
 type InMemoryClassRepo struct {
-	classes     map[models.ClassID]models.Class
-	mu          sync.RWMutex
-	bookingRepo BookingRepository
+	classes map[models.ClassID]models.Class
+	mu      sync.RWMutex
 }
 
 // NewInMemoryClassRepo creates a new InMemoryClassRepo

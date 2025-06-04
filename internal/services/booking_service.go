@@ -17,21 +17,18 @@ type BookingService interface {
 
 // BookingServiceImpl implements BookingService
 type BookingServiceImpl struct {
-	bookingRepo  repository.BookingRepository
-	classRepo    repository.ClassRepository
-	classService ClassService
+	bookingRepo repository.BookingRepository
+	classRepo   repository.ClassRepository
 }
 
 // NewBookingService creates a new booking service
 func NewBookingService(
 	bookingRepo repository.BookingRepository,
 	classRepo repository.ClassRepository,
-	classService ClassService,
 ) BookingService {
 	return &BookingServiceImpl{
-		bookingRepo:  bookingRepo,
-		classRepo:    classRepo,
-		classService: classService,
+		bookingRepo: bookingRepo,
+		classRepo:   classRepo,
 	}
 }
 
